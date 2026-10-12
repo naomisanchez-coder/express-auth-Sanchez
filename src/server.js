@@ -1,3 +1,6 @@
+import dns from 'dns';
+dns.setDefaultResultOrder('ipv4first'); // <--- Soluciona el error ENOTFOUND en Render
+
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import app from './app.js';
