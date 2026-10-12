@@ -1,5 +1,8 @@
 import dns from 'dns';
-dns.setDefaultResultOrder('ipv4first'); // <--- Soluciona el error ENOTFOUND en Render
+
+// Forzar a Node.js a usar los servidores DNS públicos de Google para resolver SRV en Render
+dns.setServers(['8.8.8.8', '8.8.4.4']);
+dns.setDefaultResultOrder('ipv4first');
 
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
